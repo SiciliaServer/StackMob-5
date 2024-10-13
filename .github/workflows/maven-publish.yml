@@ -25,10 +25,8 @@
        with: 
          java-version: '21' 
          distribution: 'temurin' 
-     - name: Install depends 
-       run: mvn install 
      - name: Build with Maven 
-       run: mvn package 
+       run: mvn clean install
      - run: mkdir staging && cp RayTraceAntiXray/target/*.jar staging 
      - name: Set Release version env variable 
        run: | 
